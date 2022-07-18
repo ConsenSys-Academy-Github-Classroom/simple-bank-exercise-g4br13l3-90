@@ -20,12 +20,14 @@ contract("SimpleBank", function (accounts) {
     instance = await SimpleBank.new();
   });
 
-//   it("ready to be solved!", async() => {
-//     const eth1000 = 1e21;
-//     // const aliceBalace = await web3.eth.getBalance(alice);
-//     // console.log(aliceBalance);
-//     assert.equal(await web3.eth.getBalance(alice), eth1000);
-//   });
+  it("ready to be solved!", async() => {
+    const eth100 = 1e20;
+    const aliceBalance = await web3.eth.getBalance(alice);
+    assert.equal(
+        aliceBalance,
+        eth100.toLocaleString('fullwide', {useGrouping: false})
+    );
+  });
 
   it("is owned by owner", async () => {
     assert.equal(
